@@ -10,6 +10,7 @@ let array255SubRed = [255, 255, 255, 255]
 let array0 = []
 let resultados = []
 let nuevasIP = []
+let nuevasIpBase = []
 
 function guardarNumeroRedes() {
     numeroDeRedes = parseInt(document.getElementById("numeroRedes").value);
@@ -21,9 +22,10 @@ function mostrarRedes(numeroDeRedes){
         const div = document.createElement("div");
         div.classList.add("containerDispositivosRedes");
         div.innerHTML = `<h2 class="tittleDispositivos">Escribe el número de dispositivos a conectarse en esta red</h2>
-        <h3 class="dipositivos">Red ${redes +1 }</h3>
-        <input type="number" id="dispositivosConectados${redes}" placeholder="Dispositivos">
-        <button onclick="guardarDispositivosConectados(${redes})">Guardar</button>`;
+        <h3 class="dispositivos">Red ${redes +1 }</h3>
+        <input type="number" class="dispositivosConectados${redes}" placeholder="Dispositivos">
+        <img class="imagenComputadora" src="/recursos/pantalla-del-ordenador.png" alt="">
+        <button class="buttonContainerGuardar "onclick="guardarDispositivosConectados(${redes})">Guardar</button>`;
         dispositivosRedes.append(div);
 
     }
@@ -130,10 +132,13 @@ function obtenerIpNueva() {
             resultadoSuma[0] = 0;
             resultadoSuma[1] += 1;
         }
+
+        ipBaseInicio = ipBase.slice();
         ipBase = resultadoSuma.slice();
 
         nuevasIP.push(resultadoSuma.slice().reverse()); 
+        nuevasIpBase.push(ipBaseInicio.reverse())
     }
-
+    return nuevasIpBase;
     return nuevasIP; 
 }

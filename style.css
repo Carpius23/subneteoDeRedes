@@ -99,6 +99,12 @@ body{
     z-index: 2;
 }
 
+.openModalInfo{
+    opacity: 1;
+    transition: opacity .6s;
+    pointer-events: all;
+}
+
 .modalInfoContainer{
     top: 50%;
     transform: translateY(+40%);
@@ -113,6 +119,10 @@ body{
     gap: 0.5em;
     place-items: center;
     grid-auto-columns: 100%;
+}
+
+.modalInfoP{
+    position: center;
 }
 
 .tittleModal{
@@ -130,7 +140,7 @@ body{
 }
 
 .modalCerrar:hover{
-    color: #282828;
+    color: #3C3C3C;
     background-color: #92c5fc;
 }
 
@@ -174,8 +184,8 @@ body{
 }
 
 .guardarNumeroRedes1{
-    background-color: #92c5fc;
     all: unset;
+    color: #92c5fc;
     cursor: pointer;
     border: 2px solid;
     border-radius: 6px;
@@ -183,18 +193,71 @@ body{
     display: inline-block;
 }
 
-.containerDispositivosRedes{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+.dispositivosRedes{
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: 1fr 1fr 1fr;
+
 }
 
-.dipositivos{
-    all: unset;
-    margin-top: 25px;
+.containerDispositivosRedes{
+    position: relative;
+    margin-top: 6%;
+    background-color: #3C3C3C;
+    border-radius: 1vmax;
+    width: 100%;
+    height: 280px;
 }
+
 
 .tittleDispositivos{
+    position: absolute;
+    font-size: 85%;
     color: #92c5fc;
+    text-align: center;
 }
 
+.imagenComputadora{
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+}
+
+.dispositivos{
+    position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   top: 13%;
+}
+
+input[type="number"][class^="dispositivosConectados"] {
+    all: unset;
+    width: 60%;
+    position: absolute;
+    left: 6px;
+    bottom: 20px;
+    border: 1px solid ;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid;
+    border-radius: 6px;
+    padding: 0.1em;
+    display: inline-block;
+}
+
+.buttonContainerGuardar{
+    all: unset;
+    position: absolute;
+    bottom: 20px;
+    left: 185px;
+    color: #92c5fc;
+    cursor: pointer;
+    border: 2px solid;
+    border-radius: 6px;
+    padding: 0.1em;
+    display: inline-block;
+}
