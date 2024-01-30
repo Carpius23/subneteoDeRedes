@@ -22,22 +22,28 @@
     <div class="containerNumeroDeRedes">
         <h1 class="titulo">Subneteo de redes</h1>
         <h2 class="subtittle">Estamos tomando en cuenta que la IP base será igual a: 148.220.0.0: </h2>
-        <button class="modalButton"></button>
         <section class="modalInfo">
             <div class="modalInfoContainer">
                 <h2 class="tittleModal">¿Cómo funciona?</h2>
-                <p class="modalInfoP">toma en cuenta aquí los routers y que aunque a esos routers haya dos dispositivos conectados, tenemos que sumar 2, por que mínimo tienen que ser 4 dispositivos conectados a esa red</p>
+                <p class="modalInfoP">Toma en cuenta aquí los routers (aunque a esos routers haya dos dispositivos conectados, tenemos que sumar 2, por que mínimo tienen que ser 4 dispositivos conectados a esa red)</p>
+                <button class="modalCerrar">Cerrar</button>
             </div>
         </section>
-        <h3 class="subSubTittle">Escribe el número de redes que quieras sacar de esta red original</h3>
-        <input type="number" id="numeroRedes" placeholder="Número de redes">
-        <button onclick="guardarNumeroRedes()">Guardar</button>
+        <hr class="primero">
+        <section class="pedirNumeros">
+            <h3 class="subSubTittle">Escribe el número de redes que quieras sacar de esta red original</h3>
+            <button class="modalButton"></button>
+            <input type="" id="numeroRedes" placeholder="Número de redes">
+            <button class ="guardarNumeroRedes1" onclick="guardarNumeroRedes()">Guardar</button>
+        </section>
+        <section class="dispositivoss">
+            <div class="dispositivosRedes">
+                <!--<h2 class="tittleDispositivos">Escribe el número de dispositivos a conectarse en cada subred</h2>
+                <h3 class="dipositivos">Red</h3>
+                <input type="number" class="dispositivosConectados" placeholder="Dispositivos">-->
+            </div> 
+        </section>
     </div>
-    <div class="dispositivosRedes">
-        <!--<h2 class="tittleDispositivos">Escribe el número de dispositivos a conectarse en cada subred</h2>
-        <h3 class="dipositivos">Red</h3>
-        <input type="number" class="dispositivosConectados" placeholder="Dispositivos">-->
-    </div> 
     <div class="resultado">
         <h1>Estas ip corresponden a cada una de tus redes:</h1>
         <div class="containerIP">

@@ -112,35 +112,26 @@ function obtenerIpNueva() {
         let resultadoSuma = new Array(4).fill(0);
         let carry = 0;
 
-        // Sumar ipBase con subArrayResultados
         for (let j = 0; j < ipBase.length; j++) {
             resultadoSuma[j] = ipBase[j] + subArrayResultados[j] + carry;
-            carry = 0; // Resetea el carry para el siguiente octeto
-
-            // Manejar el desbordamiento
+            carry = 0; 
             if (resultadoSuma[j] >= 256) {
-                carry = 1; // Lleva el 'carry' al siguiente octeto
-                resultadoSuma[j] -= 256; // Resta 256 al octeto actual
+                carry = 1; 
+                resultadoSuma[j] -= 256; 
             } else if (resultadoSuma[j] === 255) {
-                // Especialmente en la primera iteración, si el resultado es 255, no debería haber desbordamiento
                 carry = (i === 0) ? 0 : 1;
             }
         }
-
-        // En la primera iteración, no incrementar el primer octeto
         if (i !== 0) {
-            resultadoSuma[0] += 1; // Incrementa el primer octeto en las iteraciones subsiguientes
+            resultadoSuma[0] += 1; 
         }
 
-        // Realizar el desbordamiento final si es necesario
         if (resultadoSuma[0] >= 256) {
             resultadoSuma[0] = 0;
             resultadoSuma[1] += 1;
         }
-
-        // Actualizar ipBase para la siguiente iteración
         ipBase = resultadoSuma.slice();
-        // Agregar la dirección IP generada a la lista
+
         nuevasIP.push(resultadoSuma.slice().reverse()); 
     }
 

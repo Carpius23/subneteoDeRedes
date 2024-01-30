@@ -7,6 +7,7 @@ body{
     padding: 0;
 }
 
+
 .leftHeader{
     position: absolute;
     width: 20vw;
@@ -85,11 +86,69 @@ body{
     opacity: 0;
 }
 
-#numeroRedes{
+.modalInfo{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:rgba(40, 40, 40, 0.7);
+    pointer-events: none;
+    transition: opacity .6s;
+    opacity: 0;
+    z-index: 2;
+}
+
+.modalInfoContainer{
+    top: 50%;
+    transform: translateY(+40%);
+    margin: auto;
+    width: 90%;
+    background-color: #3C3C3C;
+    max-width: 35vw;
+    max-height: 60vh;
+    border-radius: 8px;
+    padding: 2em 1.5em;
+    display: grid;
+    gap: 0.5em;
+    place-items: center;
+    grid-auto-columns: 100%;
+}
+
+.tittleModal{
+    color: #92c5fc;
+}
+
+.modalCerrar{
+    color: #92c5fc;
     all: unset;
+    cursor: pointer;
+    border: 2px solid;
+    border-radius: 6px;
+    padding: 0.5em 2em;
+    display: inline-block;
+}
+
+.modalCerrar:hover{
+    color: #282828;
+    background-color: #92c5fc;
+}
+
+
+.primero{
+    margin-left: 0;
+}
+
+.pedirNumeros{
+    position: relative;
+    display: flexbox;
+    width: 90%;
+    max-width: fit-content;
+    max-height: 100%;
 }
 
 .modalButton{
+    position: absolute;
     background-image: url('/recursos/question_4992668\ \(1\).png');
     background-position: center;
     width: 1.3em;
@@ -100,5 +159,42 @@ body{
     border: none;
     border-radius: 1vmax;
     background-size: 130%;
+    top: 0;
+    margin-left: 630px;
+    margin-top: 6px;
+}
+
+#numeroRedes{
+    all: unset;
+    cursor: pointer;
+    border: 2px solid;
+    border-radius: 6px;
+    padding: 0.1em;
+    display: inline-block;
+}
+
+.guardarNumeroRedes1{
+    background-color: #92c5fc;
+    all: unset;
+    cursor: pointer;
+    border: 2px solid;
+    border-radius: 6px;
+    padding: 0.1em;
+    display: inline-block;
+}
+
+.containerDispositivosRedes{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.dipositivos{
+    all: unset;
+    margin-top: 25px;
+}
+
+.tittleDispositivos{
+    color: #92c5fc;
 }
 
