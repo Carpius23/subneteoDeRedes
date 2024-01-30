@@ -1,0 +1,104 @@
+body{
+    background-color: #282828;
+    color: #E3E3E3;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    padding: 0;
+}
+
+.leftHeader{
+    position: absolute;
+    width: 20vw;
+    height: 100vh;
+    margin-top: 0;
+}
+
+.containerLogo{
+    margin-top: 5%;
+    position: relative;
+    width: 20vw;
+    height: 5vh;
+    margin-bottom: 22%;
+    
+}
+
+.aLogo {
+    width: 100%;
+}
+
+.logo{
+    margin-top: 5%;
+    position: absolute;
+    width: 17%;
+    max-width: 100%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.datosCarpius{
+    position: relative;
+    width: 20vw;
+    height: 5vh;
+    margin-top: 5%;
+}
+
+.perfil{
+    position: absolute;
+    margin-left: 5%;
+    width: 12%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nombre strong{
+    position: absolute;
+    margin-left: 20%;
+    color: #92c5fc;
+    width: 12%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.gitHubLink{
+    margin-top: 5%;
+    position: absolute;
+    width: 12%;
+    margin-left: 5%;
+}
+
+.containerNumeroDeRedes{
+    position: absolute;
+    margin-left: 20vw;
+    height: 100vh;
+    margin-top: 0;
+}
+
+.titulo{
+    color: #92c5fc;
+    font-size:xx-large;
+}
+
+.resultado{
+    opacity: 0;
+}
+
+#numeroRedes{
+    all: unset;
+}
+
+.modalButton{
+    background-image: url('/recursos/question_4992668\ \(1\).png');
+    background-position: center;
+    width: 1.3em;
+    height: 1.3em;
+    max-width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    border: none;
+    border-radius: 1vmax;
+    background-size: 130%;
+}
+

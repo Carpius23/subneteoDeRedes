@@ -4,17 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@700&family=Poppins:wght@500&display=swap">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" type="image/png" href="/recursos/computadora.png">
 </head>
 <body>
-    <header>
-        <h1 class="titulo">Subneteo de redes</h1>
-    </header>
+     <aside class="leftHeader">
+        <div class="containerLogo">
+            <a class = "aLogo" href="/main.html"><img src="/recursos/wolf_4796629.png" alt="logo de Subneteo" class="logo"></a>
+        </div>
+        <div class="datosCarpius">
+            <p class="nombre"><strong>Carpius23</strong></p>
+            <img src="/recursos/inosuke avatar.png" alt="Carpius23" class="perfil">
+        </div>
+        <a href="https://github.com/Carpius23"><img class ="gitHubLink"src="/recursos/github-mark-white.svg" alt=""></a>
+     </aside>
     <div class="containerNumeroDeRedes">
-        <h2 class="subtittle">Esto tomando en cuenta que usamos la IP: 148.220.0.0: escribe el número de subredes y routers</h2>
+        <h1 class="titulo">Subneteo de redes</h1>
+        <h2 class="subtittle">Estamos tomando en cuenta que la IP base será igual a: 148.220.0.0: </h2>
+        <button class="modalButton"></button>
+        <section class="modalInfo">
+            <div class="modalInfoContainer">
+                <h2 class="tittleModal">¿Cómo funciona?</h2>
+                <p class="modalInfoP">toma en cuenta aquí los routers y que aunque a esos routers haya dos dispositivos conectados, tenemos que sumar 2, por que mínimo tienen que ser 4 dispositivos conectados a esa red</p>
+            </div>
+        </section>
+        <h3 class="subSubTittle">Escribe el número de redes que quieras sacar de esta red original</h3>
         <input type="number" id="numeroRedes" placeholder="Número de redes">
         <button onclick="guardarNumeroRedes()">Guardar</button>
-        <input type="number" id="numeroRouters" placeholder="Número de routers">
-        <button onclick="guardarNumeroRouters()">Guardar</button>
     </div>
     <div class="dispositivosRedes">
         <!--<h2 class="tittleDispositivos">Escribe el número de dispositivos a conectarse en cada subred</h2>
