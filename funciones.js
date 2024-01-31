@@ -12,9 +12,24 @@ let resultados = []
 let nuevasIP = []
 let nuevasIpBase = []
 
+function refresh(){
+    location.reload();
+}
+
 function guardarNumeroRedes() {
     numeroDeRedes = parseInt(document.getElementById("numeroRedes").value);
     mostrarRedes(numeroDeRedes);
+    if(numeroDeRedes > 0){
+        const reiniciarPagina = document.querySelector(".guardarNumeroRedes1");
+        reiniciarPagina.addEventListener('click', refresh);
+        numeroDeRedes = 0
+    }
+
+    else(numeroDeRedes = 0); {
+        const reiniciarPagina = document.querySelector(".guardarNumeroRedes1");
+        reiniciarPagina.addEventListener('click', refresh);
+        numeroDeRedes = 0
+    }
 }
 
 function mostrarRedes(numeroDeRedes){
@@ -23,23 +38,45 @@ function mostrarRedes(numeroDeRedes){
         div.classList.add("containerDispositivosRedes");
         div.innerHTML = `<h2 class="tittleDispositivos">Escribe el número de dispositivos a conectarse en esta red</h2>
         <h3 class="dispositivos">Red ${redes +1 }</h3>
-        <input type="number" class="dispositivosConectados${redes}" placeholder="Dispositivos">
+        <input type="" class="dispositivosConectados${redes}" placeholder="Dispositivos">
         <img class="imagenComputadora" src="/recursos/pantalla-del-ordenador.png" alt="">
         <button class="buttonContainerGuardar "onclick="guardarDispositivosConectados(${redes})">Guardar</button>`;
         dispositivosRedes.append(div);
+    }
+    if(numeroDeRedes > 0){
+        const button = document.createElement("button");
+    button.id = "containerGuardar";
+    button.textContent = "Guardar";
+    button.addEventListener('click', guardarGuardarDispositivos); 
+    dispositivosRedes.append(button);
 
+}
+
+
+
+
+function guardarDispositivosConectados(indiceRedes) {
+    const inputs = document.getElementsByClassName(`dispositivosConectados${indiceRedes}`);
+    if(inputs.length > 0) {
+        const valorInput = parseInt(inputs[0].value) || 0;
+        datosDeRedes[indiceRedes] = {
+            red: indiceRedes + 1,
+            dispositivos : valorInput
+        };
+        console.log(`Red ${indiceRedes + 1}: ${valorInput} dispositivos guardados.`);
     }
 }
 
-function guardarDispositivosConectados(indiceRedes) {
-    const valorInput = parseInt(document.getElementById(`dispositivosConectados${indiceRedes}`).value) || 0;
-    datosDeRedes[indiceRedes] = {
-        red: indiceRedes + 1,
-        dispositivos : valorInput
-    };
-    console.log(`Red ${indiceRedes + 1}: ${valorInput} dispositivos guardados.`);
+function guardarGuardarDispositivos(){
+    const numeroDeRedes = document.querySelectorAll('[class^="dispositivosConectados"]').length;
+    for (let indiceRedes = 0; indiceRedes < numeroDeRedes; indiceRedes++) {
+        guardarDispositivosConectados(indiceRedes);
+    }
 }
 
+document.getElementById('containerGuardar').addEventListener('click', function(){
+    guardarGuardarDispositivos(numeroDeRedes);
+});
 
 function obtenerDispositivosConectados(){
     dispositivosConectados = datosDeRedes.map(red => red.dispositivos);
@@ -133,12 +170,9 @@ function obtenerIpNueva() {
             resultadoSuma[1] += 1;
         }
 
-        ipBaseInicio = ipBase.slice();
         ipBase = resultadoSuma.slice();
-
         nuevasIP.push(resultadoSuma.slice().reverse()); 
-        nuevasIpBase.push(ipBaseInicio.reverse())
     }
-    return nuevasIpBase;
     return nuevasIP; 
+}
 }

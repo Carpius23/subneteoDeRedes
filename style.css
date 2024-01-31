@@ -7,20 +7,25 @@ body{
     padding: 0;
 }
 
+.header{
+    position: absolute;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+}
+
 
 .leftHeader{
     position: absolute;
+    margin-top: 16.5vh;
     width: 20vw;
-    height: 100vh;
-    margin-top: 0;
+    height: 80vh;
 }
 
 .containerLogo{
-    margin-top: 5%;
     position: relative;
     width: 20vw;
     height: 5vh;
-    margin-bottom: 22%;
     
 }
 
@@ -29,12 +34,10 @@ body{
 }
 
 .logo{
-    margin-top: 5%;
     position: absolute;
     width: 17%;
     max-width: 100%;
     margin-left: 5%;
-    margin-bottom: 5%;
     top: 50%;
     transform: translateY(-50%)
 }
@@ -47,6 +50,7 @@ body{
 }
 
 .perfil{
+    margin-top: 0;
     position: absolute;
     margin-left: 5%;
     width: 12%;
@@ -56,9 +60,9 @@ body{
 
 .nombre strong{
     position: absolute;
+    font-size: 1vw;
     margin-left: 20%;
     color: #92c5fc;
-    width: 12%;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -72,9 +76,9 @@ body{
 
 .containerNumeroDeRedes{
     position: absolute;
+    margin-top: 15vh;
     margin-left: 20vw;
-    height: 100vh;
-    margin-top: 0;
+    height: 80vh;
 }
 
 .titulo{
@@ -152,6 +156,7 @@ body{
 .pedirNumeros{
     position: relative;
     display: flexbox;
+    flex-direction: row-reverse;
     width: 90%;
     max-width: fit-content;
     max-height: 100%;
@@ -193,6 +198,11 @@ body{
     display: inline-block;
 }
 
+.guardarNumeroRedes1:hover{
+    color: #282828;
+    background-color: #92c5fc;
+}
+
 .dispositivosRedes{
     display: grid;
     gap: 8px;
@@ -228,17 +238,18 @@ body{
 }
 
 .dispositivos{
-    position: absolute;
+  position: absolute;
    left: 50%;
    transform: translateX(-50%);
    top: 13%;
 }
 
-input[type="number"][class^="dispositivosConectados"] {
+input[type=""][class^="dispositivosConectados"] {
     all: unset;
     width: 60%;
     position: absolute;
-    left: 6px;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 20px;
     border: 1px solid ;
     border-radius: 4px;
@@ -250,14 +261,45 @@ input[type="number"][class^="dispositivosConectados"] {
 }
 
 .buttonContainerGuardar{
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+#containerGuardar{
     all: unset;
-    position: absolute;
-    bottom: 20px;
-    left: 185px;
+    margin-top: 6.5%;
+    left: 100%;
+    width: 70px;
+    height: 10%;
+    z-index: 1;
     color: #92c5fc;
     cursor: pointer;
     border: 2px solid;
     border-radius: 6px;
     padding: 0.1em;
-    display: inline-block;
+}
+
+#containerGuardar:hover{
+    color: #282828;
+    background-color: #92c5fc;
+}
+
+#containerReiniciar{
+    all: unset;
+    margin-top: 6.5%;
+    left: 200%;
+    width: 70px;
+    height: 10%;
+    z-index: 1;
+    color: #FA6555;
+    cursor: pointer;
+    border: 2px solid;
+    border-radius: 6px;
+    padding: 0.1em;
+}
+
+#containerReiniciar:hover{
+    color: #282828;
+    background-color: #FA6555;
 }

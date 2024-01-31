@@ -9,10 +9,14 @@
     <link rel="shortcut icon" type="image/png" href="/recursos/computadora.png">
 </head>
 <body>
-     <aside class="leftHeader">
+    <header class="header">
+        <title>Subneteo de redes</title>
         <div class="containerLogo">
             <a class = "aLogo" href="/main.html"><img src="/recursos/wolf_4796629.png" alt="logo de Subneteo" class="logo"></a>
         </div>
+        <h1 class="titulo">Subneteo de redes</h1>
+    </header>
+     <aside class="leftHeader">
         <div class="datosCarpius">
             <p class="nombre"><strong>Carpius23</strong></p>
             <img src="/recursos/inosuke avatar.png" alt="Carpius23" class="perfil">
@@ -20,7 +24,6 @@
         <a href="https://github.com/Carpius23"><img class ="gitHubLink"src="/recursos/github-mark-white.svg" alt=""></a>
      </aside>
     <div class="containerNumeroDeRedes">
-        <h1 class="titulo">Subneteo de redes</h1>
         <h2 class="subtittle">Estamos tomando en cuenta que la IP base será igual a: 148.220.0.0: </h2>
         <section class="modalInfo">
             <div class="modalInfoContainer">
@@ -35,6 +38,7 @@
             <button class="modalButton"></button>
             <input type="" id="numeroRedes" placeholder="Número de redes">
             <button class ="guardarNumeroRedes1" onclick="guardarNumeroRedes()">Guardar</button>
+            <button id="containerReiniciar" onclick="refresh()">Reiniciar</button>
         </section>
         <section class="dispositivoss">
             <div class="dispositivosRedes">
@@ -50,7 +54,7 @@
             
         </div>
     </div>
-</body>
-<script src="/funciones.js"></script>
+    <script src="/funciones.js"></script>
 <script src="/main.js"></script>
+</body>
 </html>
