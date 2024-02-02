@@ -19,6 +19,7 @@ function refresh(){
 function guardarNumeroRedes() {
     numeroDeRedes = parseInt(document.getElementById("numeroRedes").value);
     mostrarRedes(numeroDeRedes);
+    
     if(numeroDeRedes > 0){
         const reiniciarPagina = document.querySelector(".guardarNumeroRedes1");
         reiniciarPagina.addEventListener('click', refresh);
@@ -30,6 +31,7 @@ function guardarNumeroRedes() {
         reiniciarPagina.addEventListener('click', refresh);
         numeroDeRedes = 0
     }
+
 }
 
 function mostrarRedes(numeroDeRedes){
@@ -51,7 +53,7 @@ function mostrarRedes(numeroDeRedes){
     dispositivosRedes.append(button);
 
 }
-
+}
 
 
 
@@ -175,4 +177,5 @@ function obtenerIpNueva() {
     }
     return nuevasIP; 
 }
-}
+
+
