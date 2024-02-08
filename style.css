@@ -16,7 +16,6 @@ body{
     height: 15vh;
     display: flex;
     align-items: center;
-    gap: 1em;
 }
 
 
@@ -54,6 +53,15 @@ body{
     margin-top: 5%;
 }
 
+.git{
+    position: relative;
+    width: 20vw;
+    height: 5vh;
+    margin-top: 5%;
+}
+
+
+
 .perfil{
     margin-top: 0;
     position: absolute;
@@ -72,11 +80,23 @@ body{
     transform: translateY(-50%);
 }
 
+.gitHubHub {
+    top: 50%;
+    margin-top: 0;
+    position: absolute;
+    font-size: 1vw;
+    margin-left: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .gitHubLink{
-    margin-top: 5%;
+    margin-top: 0;
     position: absolute;
     width: 12%;
     margin-left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .containerNumeroDeRedes{
