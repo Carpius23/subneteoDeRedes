@@ -11,6 +11,8 @@ let array0 = []
 let resultados = []
 let nuevasIP = []
 let nuevasIpBase = []
+let primeraUsable = []
+let ultimaUsable = []
 
 function refresh(){
     location.reload();
@@ -178,4 +180,13 @@ function obtenerIpNueva() {
     return nuevasIP; 
 }
 
+function obtenerUltimaUsable(){
+   let nuevasIP = obtenerIpNueva();
+   let ultimaUsable = nuevasIP.map(subArray => {
+    let copiaSubArray = subArray.slice();
+    copiaSubArray[copiaSubArray.length - 1] -= 1;
+    return copiaSubArray;
+   });
+   return ultimaUsable;
+}
 
