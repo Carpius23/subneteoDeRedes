@@ -1,18 +1,18 @@
-let numeroDeRedes = 0
+var numeroDeRedes = 0
 const dispositivosRedes = document.querySelector(".dispositivosRedes");
-let datosDeRedes = []
-let dispositivosConectados = []
-let ordered = []
-let potencias = []
-let array255 = [1, 2, 4, 8, 16, 32, 64, 128]
-let ipOriginal = [0, 0, 220, 148]
-let array255SubRed = [255, 255, 255, 255]
-let array0 = []
-let resultados = []
-let nuevasIP = []
-let nuevasIpBase = []
-let primeraUsable = []
-let ultimaUsable = []
+var datosDeRedes = []
+var dispositivosConectados = []
+var ordered = []
+var potencias = []
+const array255 = [1, 2, 4, 8, 16, 32, 64, 128]
+const ipOriginal = [0, 0, 220, 148]
+const array255SubRed = [255, 255, 255, 255]
+var array0 = []
+var resultados = []
+var nuevasIP = []
+var nuevasIpBase = []
+var primeraUsable = []
+var ultimaUsable = []
 
 function refresh(){
     location.reload();
@@ -27,8 +27,7 @@ function guardarNumeroRedes() {
         reiniciarPagina.addEventListener('click', refresh);
         numeroDeRedes = 0
     }
-
-    else(numeroDeRedes = 0); {
+    else {
         const reiniciarPagina = document.querySelector(".guardarNumeroRedes1");
         reiniciarPagina.addEventListener('click', refresh);
         numeroDeRedes = 0
@@ -97,6 +96,7 @@ function ordenamiento(){
 }
 
 function potenciar() {
+    potencias = []
     ordenamiento()
     for (let i = 0; i < ordered.length; i++) {
         let numero = ordered[i];
@@ -111,6 +111,7 @@ function potenciar() {
 }
 
 function sumarSegunPotencias() {
+    resultados = []
     potenciar()
     for (let i = 0; i < potencias.length; i++) {
         let array0 = new Array(4).fill(0);
@@ -147,9 +148,8 @@ function sumarSegunPotencias() {
 
 function obtenerIpNueva() {
     let ipBase = ipOriginal.slice(); 
-    sumarSegunPotencias(); 
-    let nuevasIP = []; 
-
+    sumarSegunPotencias();
+    const nuevasIP = []; 
     for (let i = 0; i < resultados.length; i++) {
         let subArrayResultados = resultados[i];
         let resultadoSuma = new Array(4).fill(0);
@@ -190,3 +190,37 @@ function obtenerUltimaUsable(){
    return ultimaUsable;
 }
 
+function obtenerPrimeraUsable(){
+    let nuevasIP = obtenerIpNueva();
+    let provisional = ipOriginal.slice();
+    let carry = true
+    let cascaron = nuevasIP.slice(0, nuevasIP.length - 1);
+    for (let i = 0; i  < cascaron.length; i++){
+        let subArray = cascaron[i]
+        subArray = subArray.reverse();
+        let carry2 = true 
+        for (let j = 0; j < subArray.length; j++) {
+            if (carry2 === true) {
+                subArray[j] += 1;
+                if (subArray[j] >= 256){
+                    subArray[j] = 1;
+                } else {
+                    carry2 = false;
+                }
+            }
+        }
+        primeraUsable.push(subArray.slice().reverse());
+    }
+    for (let i = 0; i < provisional.length; i++){
+        if (carry === true){
+            provisional[i] += 1
+        if (provisional[i] >= 256) {
+            provisional [i] = 0;
+        } else {
+            carry = false;
+            primeraUsable.unshift(provisional.slice().reverse());
+        }
+        }
+    }
+    return primeraUsable;
+}
