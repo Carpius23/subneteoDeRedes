@@ -224,3 +224,34 @@ function obtenerPrimeraUsable(){
     }
     return primeraUsable;
 }
+
+function mascara() {
+    potencias=potenciar();
+    mascRed = [];
+    potenciaAux = [];
+    for (let i = 0; i < potencias.length; i++) {
+        if (potencias[i] < 8 && potencias[i] >= 0) {
+            potenciaAux = bits(potencias[i], 3);
+        } else if (potencias[i] >= 8 && potencias[i] < 16) {
+            potenciaAux = bits((potencias[i]-8), 2);
+        } else if (potencias[i] >= 16 && potencias[i] < 24) {
+            potenciaAux = bits((potencias[i]-16), 1);
+        } else if (potencias[i] >= 24 && potencias[i] < 32) {
+            potenciaAux = bits((potencias[i]-24), 0);
+        }
+        mascRed[i] = potenciaAux;     
+    }
+    return mascRed;
+
+}
+
+function bits(a, b) {
+    base = [0, 0, 0, 0];
+    for (let i = 0; i < b; i++) {
+        base[i] = 255
+    }
+    base[b] = 255-((Math.pow(2, a)) - 1);
+    return base;
+}
+
+console.log(mascara());
