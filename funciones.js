@@ -5,7 +5,7 @@ var dispositivosConectados = []
 var ordered = []
 var potencias = []
 const array255 = [1, 2, 4, 8, 16, 32, 64, 128]
-const ipOriginal = [0, 0, 220, 148]
+const ipOriginal = [1, 0, 220, 148]
 const array255SubRed = [255, 255, 255, 255]
 var array0 = []
 var resultados = []
@@ -205,6 +205,7 @@ function obtenerPrimeraUsable(){
                 if (subArray[j] >= 256){
                     subArray[j] = 1;
                 } else {
+                    subArray[j] += 1;
                     carry2 = false;
                 }
             }
